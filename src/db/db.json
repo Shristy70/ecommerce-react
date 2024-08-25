@@ -9,7 +9,31 @@
       "category": "Breakfast"
     },
     {
+      "id": 21,
+      "name": "dosa",
+      "price": 500,
+      "description": "delicious and tasty food",
+      "images": "bri.jpg",
+      "category": "Breakfast"
+    },
+    {
+      "id": 22,
+      "name": "dosa",
+      "price": 500,
+      "description": "delicious and tasty food",
+      "images": "bri.jpg",
+      "category": "Breakfast"
+    },
+    {
       "id": 2,
+      "name": "magiiiii",
+      "price": 500,
+      "description": "delicious and tasty food",
+      "images": "bri.jpg",
+      "category": "Breakfast"
+    },
+    {
+      "id": 3,
       "name": "badha",
       "price": 1000,
       "description": "delicious and tasty food",
@@ -17,7 +41,7 @@
       "category": "Breakfast"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "bhal",
       "price": 3000,
       "description": "delicious and tasty food",
@@ -25,12 +49,12 @@
       "category": "Breakfast"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "idli/sambar",
       "price": 300,
       "description": "delicious and tasty food",
       "images": "bri.jpg",
-      "category": "Breakfast"
+      "category": "Dinner"
     },
 
     {
@@ -39,10 +63,10 @@
       "price": 900,
       "description": "delicious and tasty food",
       "images": "briy.jpg",
-      "category": "Breakfast"
+      "category": "Dinner"
     },
     {
-      "id": 1,
+      "id": 7,
       "name": "poha",
       "price": 2000,
       "description": "all time favourite",
@@ -50,7 +74,7 @@
       "category": "Dinner"
     },
     {
-      "id": 2,
+      "id": 8,
       "name": "puri/sabji",
       "price": 200,
       "description": "all time favourite",
@@ -58,7 +82,7 @@
       "category": "Dinner"
     },
     {
-      "id": 3,
+      "id": 9,
       "name": "idli/sambar",
       "price": 1200,
       "description": "all time favourite",
@@ -66,7 +90,7 @@
       "category": "Dinner"
     },
     {
-      "id": 4,
+      "id": 10,
       "name": "bariyani",
       "price": 2200,
       "description": "all time favourite",
@@ -74,7 +98,7 @@
       "category": "Dinner"
     },
     {
-      "id": 5,
+      "id": 11,
       "name": "nudels",
       "price": 4200,
       "description": "all time favourite",
@@ -82,7 +106,7 @@
       "category": "Dinner"
     },
     {
-      "id": 1,
+      "id": 12,
       "name": "paneer",
       "price": 200,
       "description": "Good for health!!",
@@ -91,7 +115,7 @@
     },
 
     {
-      "id": 3,
+      "id": 13,
       "name": "thali",
       "price": 2000,
       "description": "Good for health!!",
@@ -99,7 +123,7 @@
       "category": "Lunch"
     },
     {
-      "id": 4,
+      "id": 14,
       "name": "main course",
       "price": 3000,
       "description": "Good for health!!",
@@ -107,7 +131,7 @@
       "category": "Lunch"
     },
     {
-      "id": 5,
+      "id": 15,
       "name": "Briyani",
       "price": 200,
       "description": "Good for health!!",
@@ -115,7 +139,7 @@
       "category": "Lunch"
     },
     {
-      "id": 1,
+      "id": 16,
       "name": "Custured",
       "price": 500,
       "description": "Tasty!!",
@@ -123,7 +147,7 @@
       "category": "Desert"
     },
     {
-      "id": 2,
+      "id": 17,
       "name": "chochlate",
       "price": 500,
       "description": "Tasty!!",
@@ -131,7 +155,7 @@
       "category": "Desert"
     },
     {
-      "id": 3,
+      "id": 18,
       "name": "Ice-Cream",
       "price": 500,
       "description": "Tasty!!",
@@ -139,7 +163,7 @@
       "category": "Desert"
     },
     {
-      "id": 4,
+      "id": 19,
       "name": "Badam-shake",
       "price": 500,
       "description": "Tasty!!",
@@ -147,7 +171,7 @@
       "category": "Desert"
     },
     {
-      "id": 5,
+      "id": 20,
       "name": "Faluda",
       "price": 1000,
       "description": "Tasty!!",

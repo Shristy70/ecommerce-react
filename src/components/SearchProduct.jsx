@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addtocart } from "./CartSlice";
@@ -24,6 +24,7 @@ const SearchProduct = () => {
         name: nm,
         images: img,
         description: desc,
+        qnty:1,
         price: price,
       })
     );

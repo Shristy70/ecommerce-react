@@ -5,13 +5,15 @@ import { addtocart } from "./CartSlice";
 import breakfast from "../images/break.jpg";
 import Dinner from "../images/plate.jpg";
 import Desert from "../images/deset.webp";
+import Button from "react-bootstrap/Button";
+import Footer from "./Footer";
 const Menu = () => {
-  const [mydata, setMydata] = useState([]);
-  const [mydata2, setMydata2] = useState([]);
-  const [mydata3, setMydata3] = useState([]);
-  const [mydata4, setMydata4] = useState([]);
-  const loadData4 = () => {
-    let api = "http://localhost:3000/Item";
+   const [mydata, setMydata] = useState([]);
+   const [mydata2, setMydata2] = useState([]);
+   const [mydata3, setMydata3] = useState([]);
+   const [mydata4, setMydata4] = useState([]);
+   const loadData4 = () => {
+    let api = "http://localhost:3000/Item/?category=Desert";
     axios.get(api).then((res) => {
       setMydata4(res.data);
     });
@@ -20,16 +22,20 @@ const Menu = () => {
     loadData4();
   }, []);
 
-  const DataCart4 = (pid, nm, img, desc, price) => {
+  const DataCart = (pid, nm, img, desc, price) => {
     dispatch(
       addtocart({
         id: pid,
         name: nm,
         images: img,
         description: desc,
+        qnty:1,
         price: price,
       })
     );
+  };
+  const dataSendCart = (key) => {
+    navigate("/productdisplay",{state:key});
   };
 
   const ans4 = mydata4.map((key) => {
@@ -40,6 +46,9 @@ const Menu = () => {
             src={"../images/" + key.images}
             alt="image"
             style={{ width: "50px", height: "50px" }}
+            onClick={()=>{
+              dataSendCart(key);
+            }}
           />
         </div>
         <div className="disc">
@@ -49,13 +58,17 @@ const Menu = () => {
         <div className="price">
           ................................${key.price}
         </div>
+        <Button variant="outline-danger" size="sm" style={{width:"84px" ,height:"30px" , fontSize:"15px" , marginLeft:"10px" }}
+        onClick={()=>{DataCart(key.id, key.name, key.images, key.description, key.price)}}>
+          AddToCart</Button>
+      
       </div>
     );
   });
 
   const dispatch = useDispatch();
   const loadData = () => {
-    let api = "http://localhost:3000/Dinner";
+    let api = "http://localhost:3000/Item/?category=Dinner";
     axios.get(api).then((res) => {
       setMydata(res.data);
     });
@@ -64,17 +77,7 @@ const Menu = () => {
     loadData();
   }, []);
 
-  const DataCart = (pid, nm, img, desc, price) => {
-    dispatch(
-      addtocart({
-        id: pid,
-        name: nm,
-        images: img,
-        description: desc,
-        price: price,
-      })
-    );
-  };
+ 
 
   const ans = mydata.map((key) => {
     return (
@@ -84,6 +87,10 @@ const Menu = () => {
             src={"../images/" + key.images}
             alt="image"
             style={{ width: "50px", height: "50px" }}
+            onClick={() => {
+              dataSendCart(key);
+            }}
+        
           />
         </div>
         <div className="disc">
@@ -93,11 +100,14 @@ const Menu = () => {
         <div className="price">
           ................................${key.price}
         </div>
+        <Button variant="outline-danger" size="sm" style={{width:"84px" ,height:"30px" , fontSize:"15px" , marginLeft:"10px" }}
+        onClick={()=>{DataCart(key.id, key.name, key.images, key.description, key.price)}}>
+          AddToCart</Button>
       </div>
     );
   });
   const loadData2 = () => {
-    let api = "http://localhost:3000/Breakfast";
+    let api = "http://localhost:3000/Item/?category=Lunch";
     axios.get(api).then((res) => {
       setMydata2(res.data);
     });
@@ -105,6 +115,8 @@ const Menu = () => {
   useEffect(() => {
     loadData2();
   }, []);
+
+
   const ans2 = mydata2.map((key) => {
     return (
       <div className="din">
@@ -113,6 +125,10 @@ const Menu = () => {
             src={"../images/" + key.images}
             alt="image"
             style={{ width: "60px", height: "50px" }}
+            onClick={() => {
+              dataSendCart(key);
+            }}
+        
           />
         </div>
         <div className="disc">
@@ -122,12 +138,16 @@ const Menu = () => {
         <div className="price">
           ................................${key.price}
         </div>
+        <Button variant="outline-danger"size="sm"style={{width:"84px" ,height:"30px" , fontSize:"15px" , marginLeft:"10px" }}
+        onClick={()=>{DataCart(key.id, key.name, key.images, key.description, key.price)}}>
+          AddToCart</Button>
+
       </div>
     );
   });
 
   const loadData3 = () => {
-    let api = "http://localhost:3000/Lunch";
+    let api = "http://localhost:3000/Item/?category=Breakfast";
     axios.get(api).then((res) => {
       setMydata3(res.data);
     });
@@ -144,6 +164,10 @@ const Menu = () => {
               src={"../images/" + key.images}
               alt="image"
               style={{ width: "200px", height: "150px" }}
+              onClick={() => {
+                dataSendCart(key);
+              }}
+            
             />
           </div>
           <div className="disc">
@@ -153,19 +177,9 @@ const Menu = () => {
           <div className="price">
             price................................${key.price}
           </div>
-          <button
-            onClick={() => {
-              DataCart(
-                key.id,
-                key.name,
-                key.images,
-                key.description,
-                key.price
-              );
-            }}
-          >
-            add To Cart
-          </button>
+          <Button variant="outline-danger"size="sm"style={{width:"84px" ,height:"30px" , fontSize:"15px" , marginLeft:"10px" }}
+        onClick={()=>{DataCart(key.id, key.name, key.images, key.description, key.price)}}>
+          AddToCart</Button>
         </div>
       </div>
     );
@@ -196,7 +210,7 @@ const Menu = () => {
       <div className="breakTop">
         <div className="leftbreak">
           <h1>Breakfast-</h1>
-          {ans2}
+          {ans}
         </div>
         <div className="rightbreak">
           <img src={breakfast} alt="lolo" />
@@ -219,11 +233,9 @@ const Menu = () => {
         <div className="rightDesert">
           <img src={Desert} alt="lolo" />
         </div>
-
       </div>
-  
-    
-     
+      <div className="footermenu">
+      <Footer  /></div>
     </>
   );
 };

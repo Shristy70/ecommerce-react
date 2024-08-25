@@ -7,12 +7,14 @@ const Cartslice = createSlice({
   },
   reducers: {
     addtocart: (state, actions) => {
-      let data = state.cart.filter((item) => item.id == actions.payload);
+      let data = state.cart.filter((item) => item.id == actions.payload.id);
       if (data.length>=1) {
-        alert("add item !!");
-      } else {
         alert("already  added food");
+        
+      } else {
         state.cart.push(actions.payload);
+        alert("add item !!");
+       
       }
     },
     cartreDel:(state, actions) => {

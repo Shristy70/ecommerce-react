@@ -6,12 +6,12 @@ import { FaMinusCircle } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
 
 const CartProduct = () => {
-  const mycart = useSelector((state) => state.mycart.cart);
+  const mycart = useSelector((state)=>state.mycart.cart);
   const dispatch = useDispatch();
-  const cartRecDel = (id) => {
+  const cartRecDel=(id) => {
     dispatch(cartreDel(id));
   };
-  const qtyInc = (id) => {
+  const qtyInc =(id)=> {
     dispatch(addqnty(id));
   };
   const qtyIDec = (id) => {
@@ -19,13 +19,13 @@ const CartProduct = () => {
   };
 
   let totalAmount = 0;
-  const ans = mycart.map((key) => {
-    totalAmount += key.price*key.qnty;
+  const ans=mycart.map((key) => {
+    totalAmount+=key.price*key.qnty;
     return (
       <>
         <tr>
           <td>
-            <img src={"../images/" + key.images} />
+            <img src={"../images/"+key.images} />
           </td>
           <td>{key.name}</td>
           <td>{key.description}</td>
@@ -55,7 +55,7 @@ const CartProduct = () => {
               />
             </a>
           </td>
-          <td>{key.price * key.qnty}</td>
+          <td>{key.price*key.qnty}</td>
           <td>
             <Button
               variant="primary"

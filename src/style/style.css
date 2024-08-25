@@ -340,9 +340,11 @@ h5 {
   opacity: 0.8;
 }
 .leftbreak {
-  margin-left: 15px;
+  margin-left: 10px;
   padding: 20px;
   box-shadow: 2px 3px 3px 2px gray;
+  margin-right: 10px;
+  margin-top: 20px;
 }
 .leftbreak h1 {
   color: maroon;
@@ -361,9 +363,15 @@ h5 {
   box-shadow: 1px 2px 2px 1px gray;
   opacity: 0.8;
 }
+.footermenu{
+  margin-top: 390px;
+}
+
 .rightDinner {
   margin-right: 20px;
+  margin-top: 20px;
   box-shadow: 2px 3px 3px 2px gray;
+  margin-left: 9px;
   padding: 20px;
 }
 .rightDinner h1 {

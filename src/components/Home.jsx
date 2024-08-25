@@ -7,6 +7,7 @@ import img2 from "../images/pizaa2.jpg";
 import chef1 from "../images/chef1.webp";
 import chef2 from "../images/chef2.jpg";
 import chef3 from "../images/chef3.jpg";
+import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -22,7 +23,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loadData = () => {
-    let api = "http://localhost:3000/Item";
+    let api = `http://localhost:3000/Item/?category=Breakfast`;
     axios.get(api).then((res) => {
       setMydata(res.data);
     });
@@ -31,10 +32,6 @@ const Home = () => {
     loadData();
   }, []);
 
-  const dataSendCart = (id) => {
-    navigate(`/productdisplay/${id}`);
-  };
-
   const DataCart = (pid, nm, img, desc, price) => {
     dispatch(
       addtocart({
@@ -42,10 +39,16 @@ const Home = () => {
         name: nm,
         images: img,
         description: desc,
+        qnty:1,
         price: price,
       })
     );
     };
+  const dataSendCart = (key) => {
+    navigate("/productdisplay",{state:key});
+  };
+
+  
 
 
   const ans = mydata.map((key) => {
@@ -57,7 +60,7 @@ const Home = () => {
             alt="image"
             style={{ width: "50px", height: "50px" }}
             onClick={() => {
-              dataSendCart(key.id);
+              dataSendCart(key);
             }}
           />
         </div>
@@ -66,13 +69,16 @@ const Home = () => {
           <div className="dis">{key.description}</div>
         </div>
         <div className="price">
-          ................................${key.price}
+          .............${key.price}
         </div>
+        <Button variant="outline-danger"size="sm"style={{width:"84px" ,height:"30px" , fontSize:"15px" , marginLeft:"10px" }}
+        onClick={()=>{DataCart(key.id, key.name, key.images, key.description, key.price)}}>
+          AddToCart</Button>
       </div>
     );
   });
   const loadData2 = () => {
-    let api = "http://localhost:3000/Item";
+    let api = "http://localhost:3000/Item/?category=Lunch";
     axios.get(api).then((res) => {
       setMydata2(res.data);
     });
@@ -80,6 +86,8 @@ const Home = () => {
   useEffect(() => {
     loadData2();
   }, []);
+
+  
   const ans2 = mydata2.map((key) => {
     return (
       <div className="din">
@@ -100,12 +108,15 @@ const Home = () => {
         <div className="price">
           ................................${key.price}
         </div>
+        <Button variant="outline-danger"size="sm"style={{width:"84px" ,height:"30px" , fontSize:"15px" , marginLeft:"10px" }}
+        onClick={()=>{DataCart(key.id, key.name, key.images, key.description, key.price)}}>
+          AddToCart</Button>
       </div>
     );
   });
 
   const loadData3 = () => {
-    let api = "http://localhost:3000/Item";
+    let api = "http://localhost:3000/Item/?category=Dinner";
     axios.get(api).then((res) => {
       setMydata3(res.data);
     });
@@ -132,21 +143,22 @@ const Home = () => {
             <div className="dis">{key.description}</div>
           </div>
           <div className="price">
-            price................................${key.price}
+            price................................${key.price} <br />
           </div>
-          <button
+          <Button variant="outline-danger"size="sm"
             onClick={() => {
               DataCart(
                 key.id,
                 key.name,
                 key.images,
                 key.description,
+                
                 key.price
               );
             }}
           >
             add To Cart
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -246,11 +258,11 @@ const Home = () => {
           <h5>CHEF SELECTION</h5>
           <div className="box">
             <div className="box1">
-              <h2>Dinner</h2>
+              <h2>BreakFast</h2>
               {ans}
             </div>
             <div className="box2">
-              <h2>Breakfast</h2>
+              <h2>Dinner</h2>
               {ans2}
             </div>
           </div>
