@@ -16,7 +16,7 @@ const Topmenu = () => {
     <>
       <Navbar 
         className="navbar"
-        style={{ backgroundColor: "rgb(241, 231, 231)" , fontWeight:"bold" , position:"sticky", top:"0", opacity:"1"}}
+        style={{position:"absolute", zIndex:"1", backgroundColor: "rgb(241, 231, 231)" , fontWeight:"bold" , position:"sticky", top:"0", opacity:"1"}}
       >
         <Container>
           <Navbar.Brand href="#home">
@@ -39,7 +39,7 @@ const Topmenu = () => {
                 Menu
               </Nav.Link>
               <Nav.Link as={Link} to="productdisplay">
-                ProductDisplay
+              ProductDisplay
               </Nav.Link>
               <Nav.Link as={Link} to="searchproduct">
                 SearchProduct
@@ -61,10 +61,10 @@ const Topmenu = () => {
             </Nav>
             </Navbar.Collapse>
             
-         
+      
           <Nav.Link href="#deets">
           <Nav.Link eventKey={2} href="#memes">
-          <FaCartShopping onClick={()=>{navigate("/CartProduct")}} style={{color:"darkred" , fontSize:"20px" ,marginRight:"10px",  backgroundColor:"pink" ,borderRadius:"40%" }}   />
+          <FaCartShopping onClick={()=>{navigate("/CartProduct")}} style={{color:"darkred" , fontSize:"20px" ,marginRight:"3px",  backgroundColor:"pink" ,borderRadius:"40%" }}   />
             {dataLength>=1 ? <span id="tokri" style={{color:"darkred"  }}><sup>{dataLength}</sup></span> :""}
             </Nav.Link>
             </Nav.Link>

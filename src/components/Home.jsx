@@ -39,17 +39,14 @@ const Home = () => {
         name: nm,
         images: img,
         description: desc,
-        qnty:1,
+        qnty: 1,
         price: price,
       })
     );
-    };
-  const dataSendCart = (key) => {
-    navigate("/productdisplay",{state:key});
   };
-
-  
-
+  const dataSendCart = (key) => {
+    navigate("/productdisplay", { state: key });
+  };
 
   const ans = mydata.map((key) => {
     return (
@@ -68,12 +65,22 @@ const Home = () => {
           <div className="name">{key.name}</div>
           <div className="dis">{key.description}</div>
         </div>
-        <div className="price">
-          .............${key.price}
-        </div>
-        <Button variant="outline-danger"size="sm"style={{width:"84px" ,height:"30px" , fontSize:"15px" , marginLeft:"10px" }}
-        onClick={()=>{DataCart(key.id, key.name, key.images, key.description, key.price)}}>
-          AddToCart</Button>
+        <div className="price">.............${key.price}</div>
+        <Button
+          variant="outline-danger"
+          size="sm"
+          style={{
+            width: "84px",
+            height: "30px",
+            fontSize: "15px",
+            marginLeft: "10px",
+          }}
+          onClick={() => {
+            DataCart(key.id, key.name, key.images, key.description, key.price);
+          }}
+        >
+          AddToCart
+        </Button>
       </div>
     );
   });
@@ -87,7 +94,6 @@ const Home = () => {
     loadData2();
   }, []);
 
-  
   const ans2 = mydata2.map((key) => {
     return (
       <div className="din">
@@ -108,9 +114,21 @@ const Home = () => {
         <div className="price">
           ................................${key.price}
         </div>
-        <Button variant="outline-danger"size="sm"style={{width:"84px" ,height:"30px" , fontSize:"15px" , marginLeft:"10px" }}
-        onClick={()=>{DataCart(key.id, key.name, key.images, key.description, key.price)}}>
-          AddToCart</Button>
+        <Button
+          variant="outline-danger"
+          size="sm"
+          style={{
+            width: "84px",
+            height: "30px",
+            fontSize: "15px",
+            marginLeft: "10px",
+          }}
+          onClick={() => {
+            DataCart(key.id, key.name, key.images, key.description, key.price);
+          }}
+        >
+          AddToCart
+        </Button>
       </div>
     );
   });
@@ -134,7 +152,7 @@ const Home = () => {
               alt="image"
               style={{ width: "200px", height: "150px" }}
               onClick={() => {
-                dataSendCart(key.id);
+                dataSendCart(key);
               }}
             />
           </div>
@@ -145,14 +163,16 @@ const Home = () => {
           <div className="price">
             price................................${key.price} <br />
           </div>
-          <Button variant="outline-danger"size="sm"
+          <Button
+            variant="outline-danger"
+            size="sm"
             onClick={() => {
               DataCart(
                 key.id,
                 key.name,
                 key.images,
                 key.description,
-                
+
                 key.price
               );
             }}
@@ -165,7 +185,7 @@ const Home = () => {
   });
   return (
     <>
-      <Carousel>
+      <Carousel id="carousel">
         <Carousel.Item>
           <img src={b1} style={{ width: "100%", height: "400px" }} />
           <Carousel.Caption>

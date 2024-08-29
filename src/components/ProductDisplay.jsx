@@ -1,10 +1,13 @@
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { addtocart } from "./CartSlice";
+
+import React from "react";
+
 const ProductDisplay = () => {
   const dispatch = useDispatch();
-  const [mypro, setMyPro] = useState({
+  const [myPro, setMyPro] = useState({
     id: "",
     name: "",
     description: "",
@@ -14,41 +17,32 @@ const ProductDisplay = () => {
   const location = useLocation();
   useEffect(() => {
     setMyPro({
-      id:location.state.id,
-      name:location.state.name,
-      description:location.state.description,
-      images:location.state.images,
-      price:location.state.price,
+      id: location.state.id,
+      name: location.state.name,
+      description: location.state.description,
+      images: location.state.images,
+      price: location.state.price,
     });
   }, []);
 
-  const DataCart = (pid, nm, img, desc, price) => {
-    dispatch(
-      addtocart({
-        id: pid,
-        name: nm,
-        images: img,
-        description: desc,
-        qnty:1,
-        price: price,
-      })
-    );
-  };
-
-  return (
-    <>
-      <div id="productdata">
-        <div>
-          <img src={`../images/+${mypro.images}`} style={{ height: "500px" }} />
-        </div>
-        <div>
-          <h1>product name: {mypro.name}</h1>
-          <h3>Description : {mypro.description}</h3>
-          <h2>Price : {mypro.price}</h2><br /><br />
-          <button onClick={()=>{DataCart(mypro.id , mypro.name , mypro.images,mypro.description , mypro.price)}}>Add to Cart</button>
-        </div>
-      </div>
-    </>
+  const DataCart =(pid , nm, img, desc,price)=>{
+dispatch(addtocart({id: pid , name:nm,images:img,description:desc, qnty:1, price:price}))
+  }
+  return(
+  <>
+  <div id="productData">
+<div>
+<img src={`../images/${myPro.images}`}  style={{height:"300px", width:"300px"}}  alt="" />
+</div>
+<div>
+    <h2>Product Name : {myPro.name}</h2>
+    <h2>Description Name : {myPro.description}</h2>
+    <h2>Price : {myPro.price}</h2><br /><br />
+    <button onClick={()=>{DataCart(myPro.id, myPro.name,myPro.images, myPro.description, myPro.price)}} >add to cart</button>
+</div>
+  </div> 
+  </>
   );
 };
+
 export default ProductDisplay;

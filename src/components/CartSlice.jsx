@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Cartslice = createSlice({
   name: "mycart",

@@ -8,7 +8,10 @@ h1 {
 .second p {
   color: red;
 }
-
+#carousel{
+z-index: 0;
+  position: relative;
+}
 .second h1 {
   margin-top: 50px;
 }

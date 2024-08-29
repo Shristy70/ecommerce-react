@@ -4,28 +4,32 @@ import Button from "react-bootstrap/Button";
 import { cartreDel, addqnty, DelQnty } from "./CartSlice";
 import { FaMinusCircle } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const CartProduct = () => {
-  const mycart = useSelector((state)=>state.mycart.cart);
+  const mycart = useSelector((state) =>state.mycart.cart);
   const dispatch = useDispatch();
-  const cartRecDel=(id) => {
+  const navigate = useNavigate();
+  const cartRecDel = (id) => {
     dispatch(cartreDel(id));
   };
-  const qtyInc =(id)=> {
+  const qtyInc = (id) => {
     dispatch(addqnty(id));
   };
   const qtyIDec = (id) => {
     dispatch(DelQnty(id));
   };
-
+  const checkOut = () => {
+    navigate("/checkout");
+  };
   let totalAmount = 0;
-  const ans=mycart.map((key) => {
-    totalAmount+=key.price*key.qnty;
+  const ans = mycart.map((key) => {
+    totalAmount += key.price * key.qnty;
     return (
       <>
         <tr>
           <td>
-            <img src={"../images/"+key.images} />
+            <img src={"../images/" + key.images} style={{width:"150px" , height:"100px"}} />
           </td>
           <td>{key.name}</td>
           <td>{key.description}</td>
@@ -55,7 +59,7 @@ const CartProduct = () => {
               />
             </a>
           </td>
-          <td>{key.price*key.qnty}</td>
+          <td>{key.price * key.qnty}</td>
           <td>
             <Button
               variant="primary"
@@ -73,11 +77,11 @@ const CartProduct = () => {
   });
   return (
     <>
-      <h1 > your product cart</h1>
+      <h1> your product cart</h1>
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
+            <th>S.no</th>
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
@@ -95,6 +99,20 @@ const CartProduct = () => {
             <th></th>
             <th>Total Amount :</th>
             <th>{totalAmount}</th>
+            <th></th>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>
+              <Button variant="primary" onClick={checkOut}>
+                CheckOut
+              </Button>
+            </th>
+            <th></th>
           </tr>
         </tbody>
       </Table>
