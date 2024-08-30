@@ -16,7 +16,8 @@ const Topmenu = () => {
     <>
       <Navbar 
         className="navbar"
-        style={{position:"absolute", zIndex:"1", backgroundColor: "rgb(241, 231, 231)" , fontWeight:"bold" , position:"sticky", top:"0", opacity:"1"}}
+        style={{position:"absolute", zIndex:"1", backgroundColor: ""
+           , fontWeight:"bold" , position:"sticky", top:"0", opacity:"1"}}
       >
         <Container>
           <Navbar.Brand href="#home">

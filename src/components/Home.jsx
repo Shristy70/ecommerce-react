@@ -103,7 +103,7 @@ const Home = () => {
             alt="image"
             style={{ width: "60px", height: "50px" }}
             onClick={() => {
-              dataSendCart(key.id);
+              dataSendCart(key);
             }}
           />
         </div>
