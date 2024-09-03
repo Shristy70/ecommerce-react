@@ -4,14 +4,16 @@ import Home from "./components/Home";
 import Menu from "./components/Menu";
 import CartProduct from "./components/CartProduct";
 import SearchProduct from "./components/SearchProduct";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Dinner from "./components/Diner";
 import Breakfast from "./components/Breakfast";
 import Desert from "./components/Desert";
 import PaymentComplete from "./components/PaymentComplete";
 import CheckOut from "./components/CheckOut";
 import ProductDisplay from "./components/ProductDisplay";
+import Lunch from "./components/Lunch";
+
 const App = () => {
   return (
     <>
@@ -24,7 +26,7 @@ const App = () => {
             <Route path="productdisplay" element={<ProductDisplay />} />
             <Route path="searchproduct" element={<SearchProduct />} />
             <Route path="cartproduct" element={<CartProduct />} />
-
+            <Route path="lunch" element={<Lunch />} />
             <Route path="dinner" element={<Dinner />} />
             <Route path="breakfast" element={<Breakfast />} />
             <Route path="desert" element={<Desert />} />

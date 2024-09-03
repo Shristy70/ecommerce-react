@@ -14,7 +14,7 @@
       "price": 500,
       "description": "delicious and tasty food",
       "images": "bri.jpg",
-      "category": "Breakfast"
+      "category": "Lunch"
     },
     {
       "id": 22,
@@ -22,7 +22,7 @@
       "price": 500,
       "description": "delicious and tasty food",
       "images": "bri.jpg",
-      "category": "Breakfast"
+      "category": "Lunch"
     },
     {
       "id": 2,

@@ -4,15 +4,15 @@ import Button from "react-bootstrap/Button";
 import { useDispatch } from "react-redux";
 import { addtocart } from "./CartSlice";
 import { useNavigate } from "react-router-dom";
-import breakfast from "../images/break.jpg";
+import lunch from "../images/samosa.jpg";
 
-const Breakfast = () => {
+const Lunch = () => {
   const [mydata, setMydata] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const loadData = () => {
-    const api = `http://localhost:3000/Item/?category=Breakfast`;
+    const api = `http://localhost:3000/Item/?category=Lunch`;
     axios.get(api).then((res) => {
       setMydata(res.data);
     });
@@ -84,15 +84,15 @@ const Breakfast = () => {
           padding: "10px",
         }}
       >
-        Breakfast Items
+        Lunch Items
       </h1>
       <div className="con" style={{display:"flex"}}>
         <div id="cartdata">{ans}</div>
 
         <div className="img" >
           <img
-            src={breakfast}
-            style={{ width: "300px", height: "300px" , border:"2px solid grey",marginLeft:"10px",marginTop:"10px"}}
+            src={lunch}
+            style={{ width: "350px", height: "300px" , border:"2px solid grey",marginLeft:"10px",marginTop:"10px"}}
             alt=""
           />
         </div>
@@ -102,4 +102,4 @@ const Breakfast = () => {
   );
 };
 
-export default Breakfast;
+export default Lunch;
