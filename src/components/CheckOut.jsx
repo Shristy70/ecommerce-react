@@ -21,14 +21,15 @@ const CheckOut = () => {
     document.getElementById("mybtn").focus();
   };
   return (
-    <div>
-      <h1>CheckOut</h1>
+    <>
+    <h1>CheckOut</h1>
+    <div id="headercheck">
       <div id="checkout">
         <h4>shoping address</h4>
-        <Form style={{width:"50%"}}>
+        <Form style={{width:"50%"}} id="formcheck">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Enter Name :</Form.Label>
-            <Form.Control type="text" placeholder="Enter name" />
+            <Form.Control type="text" placeholder="Enter name " />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Enter Address :</Form.Label>
@@ -78,8 +79,10 @@ const CheckOut = () => {
           Submit
         </Button>
       </div>
+      </div>
       <Footer/>
-    </div>
+   
+    </>
   );
 };
 

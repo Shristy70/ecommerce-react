@@ -214,7 +214,7 @@ const Home = () => {
       <div className="second">
         <h1>The Perfect Offer For You</h1>
         <p>FROM OUR MASTER CHEF</p>
-        <div className="cart" style={{ display: "flex" }}>
+        <div className="cart" style={{ display: "flex"}}>
           <div className="div1">
             <div className="img">
               <img src={b3} alt="" />
@@ -292,17 +292,17 @@ const Home = () => {
       <div className="fifth">
         <h1>Popular main cource.</h1>
         <h5>CHEF SELECTION</h5>
-        <div className="bar">______</div>
+        {/* <div className="bar">______</div> */}
         <p>
           When, while the lovely valley teems with vapour around me, and the{" "}
           <br />
           meridian sun strikes the upper.
         </p>
-        <div className="container">
+        {/* <div className="container"> */}
           <div className="row">
             <div className="boxcon">{ans3}</div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
       <div className="sixth">
         <h1>Meet Our Chefs</h1>

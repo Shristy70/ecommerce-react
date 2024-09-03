@@ -19,7 +19,7 @@ const Topmenu = () => {
         style={{position:"absolute", zIndex:"1", backgroundColor: ""
            , fontWeight:"bold" , position:"sticky", top:"0", opacity:"1"}}
       >
-        <Container>
+       
           <Navbar.Brand href="#home">
             <img
               src={logo}
@@ -72,7 +72,7 @@ const Topmenu = () => {
             <Nav.Link eventKey={2} href="#memes">
              <FaSearch style={{color:"darkred"}}  />
             </Nav.Link>
-        </Container>
+      
       </Navbar>
     </>
   );

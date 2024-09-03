@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addtocart } from "./CartSlice";
+import Footer from "./Footer";
 
 const ProductDisplay = () => {
   const dispatch = useDispatch();
@@ -36,23 +37,26 @@ const ProductDisplay = () => {
   };
 
   return (
+    <>
     <div className="productData">
-      <div>
+      <div className="imgproduct">
         <img
           src={`/images/${mypro.images}`}
           alt={mypro.name}
           style={{ height: "300px", width: "300px" }}
         />
       </div>
-      <div>
+      <div className="contentproduct">
         <h2>Product Name: {mypro.name}</h2>
         <h4>Description: {mypro.description}</h4>
-        <h3>Price: {mypro.price}</h3>
+        <h3>Price: <span style={{color:"red"}}>{mypro.price}</span></h3>
         <br />
         <br />
         <button onClick={addToCartHandler}>Add to Cart</button>
       </div>
-    </div>
+    </div><br /><br />
+    <Footer/>
+    </>
   );
 };
 
